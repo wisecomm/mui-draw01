@@ -43,9 +43,34 @@ interface CustomDrawerProps {
   theme: Theme;
 }
 
+const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
+  ({ theme }) => ({
+    width: drawerWidth,
+    flexShrink: 0,
+    whiteSpace: 'nowrap',
+    boxSizing: 'border-box',
+    variants: [
+      {
+        props: ({ open }) => open,
+        style: {
+          ...openedMixin(theme),
+          '& .MuiDrawer-paper': openedMixin(theme),
+        },
+      },
+      {
+        props: ({ open }) => !open,
+        style: {
+          ...closedMixin(theme),
+          '& .MuiDrawer-paper': closedMixin(theme),
+        },
+      },
+    ],
+  }),
+);
+
 const CustomDrawer = ({ open, handleDrawerClose, theme }: CustomDrawerProps) => {
   return (
-    <MuiDrawer variant="permanent" open={open}>
+    <Drawer variant="permanent" open={open}>
       <DrawerHeader>
         <IconButton onClick={handleDrawerClose}>
           {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
@@ -55,7 +80,7 @@ const CustomDrawer = ({ open, handleDrawerClose, theme }: CustomDrawerProps) => 
       <MainList open={open} />
       <Divider />
       <SecondaryList open={open} />
-    </MuiDrawer>
+    </Drawer>
   );
 };
 

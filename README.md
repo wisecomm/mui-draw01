@@ -2,38 +2,14 @@
 
 ## How to use
 
-Download the example [or clone the repo](https://github.com/mui/material-ui):
+???  메뉴 넓이를 글로벌에 선언하는가 테마에 넣는가 ? 
+CustomDrawer에서는 광범위하게 사용중 ㅎㅎㅎ
+const drawerWidth = 240;
 
-<!-- #default-branch-switch -->
 
-```bash
-curl https://codeload.github.com/mui/material-ui/tar.gz/master | tar -xz --strip=2 material-ui-master/examples/material-ui-vite-ts
-cd material-ui-vite-ts
-```
+??? 툴바 앞쪽 아이콘 비우기 ( 사이즈에 따라서 달라지는데 ??? )
+//  width: `calc(100% - ${64}px)`,
 
-Install it and run:
 
-```bash
-npm install
-npm run dev
-```
 
-or:
 
-<!-- #default-branch-switch -->
-
-[![Edit on StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/mui/material-ui/tree/master/examples/material-ui-vite-ts)
-
-[![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/p/sandbox/github/mui/material-ui/tree/master/examples/material-ui-vite-ts)
-
-## The idea behind the example
-
-This example uses [Vite.js](https://github.com/vitejs/vite).
-It includes `@mui/material` and its peer dependencies, including [Emotion](https://emotion.sh/docs/introduction), the default style engine in Material UI v6.
-
-## What's next?
-
-<!-- #default-branch-switch -->
-
-You now have a working example project.
-You can head back to the documentation and continue by browsing the [templates](https://mui.com/material-ui/getting-started/templates/) section.

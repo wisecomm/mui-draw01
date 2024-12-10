@@ -21,15 +21,15 @@ export default function App() {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <CustomAppBar 
-        open={open} 
-        drawerWidth={drawerWidth} 
-        handleDrawerOpen={handleDrawerOpen} 
-      />
       <CustomDrawer
         open={open}
         handleDrawerClose={handleDrawerClose}
         theme={theme}
+      />
+      <CustomAppBar 
+        open={open} 
+        drawerWidth={drawerWidth} 
+        handleDrawerOpen={handleDrawerOpen} 
       />
     </Box>
   );
